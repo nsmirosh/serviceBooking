@@ -29,27 +29,24 @@ class BodyLayout extends StatelessWidget {
 }
 
 Widget _myListView(BuildContext context) {
-
-  // backing data
-  final europeanCountries = ['Albania', 'Andorra', 'Armenia', 'Austria',
-    'Azerbaijan', 'Belarus', 'Belgium', 'Bosnia and Herzegovina', 'Bulgaria',
-    'Croatia', 'Cyprus', 'Czech Republic', 'Denmark', 'Estonia', 'Finland',
-    'France', 'Georgia', 'Germany', 'Greece', 'Hungary', 'Iceland', 'Ireland',
-    'Italy', 'Kazakhstan', 'Kosovo', 'Latvia', 'Liechtenstein', 'Lithuania',
-    'Luxembourg', 'Macedonia', 'Malta', 'Moldova', 'Monaco', 'Montenegro',
-    'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Russia',
-    'San Marino', 'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden',
-    'Switzerland', 'Turkey', 'Ukraine', 'United Kingdom', 'Vatican City'];
-
-  final city = City(name: 'balls', branchAmount: 2);
+  final List<City> cities = [
+    City(name: 'Kyiv', branchAmount: 2),
+    City(name: 'Lviv', branchAmount: 5)
+  ];
 
   return ListView.builder(
-    itemCount: europeanCountries.length,
+    itemCount: cities.length,
     itemBuilder: (context, index) {
+      var city = cities[index];
       return ListTile(
-        title: Text(europeanCountries[index]),
-      );
+          title: Text(city.name),
+          subtitle: Text('branches: ${city.branchAmount}'),
+          onTap: () => _doSomething());
     },
   );
+}
+
+_doSomething() {
+
 
 }
