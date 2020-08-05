@@ -1,17 +1,30 @@
-# service_booking_app
+# ServiceBooking
 
-A Service Booking App
+An app written in Flutter that aims to help service businesses and potential customers to book the services
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+You need to create a firebase project and follow the instructions below to build for each platform.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# serviceBooking
+
+### to build Android:
+
+```
+add your google-services.json file to the root of the android app directory
+```
+
+
+### to build iOS:
+
+```
+coming soon
+```
+
+## Built With:
+
+* [Firebase](https://firebase.google.com/) - Backend used
+* [Flutter Redux](https://pub.dev/packages/flutter_redux) - Architecture used for state management
