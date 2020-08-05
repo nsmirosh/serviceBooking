@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "128977068494",
+    "firebase_url": "https://baby-names-example-c04cb.firebaseio.com",
+    "project_id": "baby-names-example-c04cb",
+    "storage_bucket": "baby-names-example-c04cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128977068494:android:3118711ac1ed202b8b8b9f",
+        "android_client_info": {
+          "package_name": "nick.miroshnychenko.service_booking_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "128977068494-sne525ftstd0n0gv5cc1bqfef4sbbkie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9fXMBhmvSXZ5VAy5gq3P5QQbep0x12Ns"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "128977068494-sne525ftstd0n0gv5cc1bqfef4sbbkie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
