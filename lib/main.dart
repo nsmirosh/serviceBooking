@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 const CITIES_PATH = "cities";
 
@@ -28,15 +31,23 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+
+    //TODO implement this via FutureBuilder
     getData().then((value) {
       setState(() => data = value);
-    });
+    }).catchError(
+      (e) => Fluttertoast.showToast(
+          msg: 'Error: ${e.toString()}',
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.CENTER,
+          fontSize: 16.0),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Baby Name Votes')),
+      appBar: AppBar(title: Text('Cities')),
       body: _buildBody(context),
     );
   }
@@ -58,7 +69,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _buildListItem(BuildContext context, DocumentSnapshot data) {
-    final city = City.fromMap(data.data);
+    var city;
+    try {
+      city = City.fromMap(data.data);
+    } catch (e) {
+      Fluttertoast.showToast(
+          msg: 'Error: ${e.toString()}',
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.CENTER,
+          fontSize: 16.0);
+    }
 
     return Padding(
       key: ValueKey(city.name),
@@ -96,8 +116,5 @@ class City {
   String toString() => "Record<$name:$numberOfBranches>";
 }
 
-Future<QuerySnapshot> getData() async {
-  QuerySnapshot snapshot =
-      await Firestore.instance.collection(CITIES_PATH).getDocuments();
-  return snapshot;
-}
+Future<QuerySnapshot> getData() async =>
+    Firestore.instance.collection(CITIES_PATH).getDocuments();
