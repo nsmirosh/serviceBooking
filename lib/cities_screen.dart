@@ -6,26 +6,24 @@ import 'package:fluttertoast/fluttertoast.dart';
 
 const CITIES_PATH = "cities";
 
-void main() => runApp(MyApp());
+class CitiesScreen extends StatelessWidget {
 
-class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Baby Names',
-      home: MyHomePage(),
+    return Scaffold(
+      body: CitiesPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class CitiesPage extends StatefulWidget {
   @override
-  _MyHomePageState createState() {
-    return _MyHomePageState();
+  _CitiesPageState createState() {
+    return _CitiesPageState();
   }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _CitiesPageState extends State<CitiesPage> {
   var data;
 
   @override
